@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/styles.scss';
+import Header from './components/Header.js';
 
-class Header extends React.Component {
-    render() {
-      return (
-        <div>
-          <h2>TEST</h2>
-        </div>
-      );
-    }
-  }
+
 // class Index extends React.Component {
 //   render() {
 //     return (
@@ -22,9 +15,7 @@ class Header extends React.Component {
 // }
 ReactDOM.render(
 <div>
-
 <Header/>
-</div>
-  ,
+</div> ,
   document.getElementById('root')
 );
