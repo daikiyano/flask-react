@@ -1,21 +1,18 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/styles.scss';
 import Header from './components/Header.js';
+import Posts from './components/Posts.js';
+import About from './components/About.js';
 
 
-// class Index extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h2>react-Flask</h2>
-//       </div>
-//     );
-//   }
-// }
 ReactDOM.render(
-<div>
+<React.Fragment>
 <Header/>
-</div> ,
+<About/>
+<Posts/>
+</React.Fragment>
+ ,
   document.getElementById('root')
 );
