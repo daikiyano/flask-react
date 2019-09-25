@@ -51,6 +51,7 @@ const posts = [
 function Posts(props) {
   return (
     <div style={{ marginTop: 50, padding: 30 }}>
+      <h1 style={{ margin: '50px 0',textAlign: 'center' }}>My Portfolio</h1>
       <Grid container spacing={40} justify="center">
         {posts.map(post => (
           <Grid item key={post.title}>

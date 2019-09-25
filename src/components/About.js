@@ -1,9 +1,11 @@
 import React from 'react';
-import SkillBar from 'react-skillbars';
 import Tobitate from '../images/tobitate.png'
 import Two from '../images/two.png'
 import Komazawa from '../images/komazawa.png'
 import Airxsys from '../images/airxsys.png'
+// module 'react-skillbars';
+
+import SkillBar from 'react-skillbars';
 
 
 
@@ -34,10 +36,17 @@ export default class About extends React.Component {
             }
           }
       return (
+        
         <div className='container' style={{backgroundColor: 'white',width: '90%',marginTop: '100px', textAlign: 'center'}}>
+            
+            
             <div className='row'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                     <div className='row'>
+                    <div className='intro_left col-lg-6 col-md-6 col-sm-6 col-xs-12'>
+                            <h1>My skills</h1>
+                            <SkillBar skills={skills} colors={colors} height={25}/>
+                        </div>
                     <div className='intro_right col-lg-6 col-md-6 col-sm-6 col-xs-12'>
                             <h1>About Me</h1>
                             <p style={{fontSize: '20px'}}>
@@ -61,10 +70,6 @@ export default class About extends React.Component {
                                 <img src={Tobitate}  alt="tobitate" style={{height: '75px',wight: '75px'}} />
                                 <img src={Airxsys}  alt="tobitate" style={{height: '75px',wight: '75px'}} />
                             </div>
-                        </div>
-                        <div className='intro_left col-lg-6 col-md-6 col-sm-6 col-xs-12'>
-                            <h1>My skills</h1>
-                            <SkillBar skills={skills} colors={colors} height={25}/>
                         </div>
                     </div>
                 </div>
