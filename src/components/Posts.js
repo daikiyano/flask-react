@@ -6,14 +6,29 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 // import { posts } from "./PostInfo";
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root')
+
+const useStyles = makeStyles(theme => ({
+  fab: {
+    margin: theme.spacing(1),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+}));
 
 
 const posts = [
 
   {
    title: "Media Page",
-   excerpt: "This is my first post with more content inside",
+   excerpt: "HTML,CSS,JavaScript,Ruby,Ruby on rails",
    image: "https://bit.ly/2WNi2Ml"
   },
  
@@ -48,13 +63,38 @@ const posts = [
   }
  ]
 
+
+ 
+ 
+
 function Posts(props) {
+
+//   constructor() {
+//     super();
+  
+  // this.state = {
+  //   modalIsOpen: true
+  // }
+
+//   this.openModal = this.openModal.bind(this);
+// }
+//   openModal = () => {
+//    this.setState({modalIsOpen: true});
+//  }
+  const classes = useStyles();
   return (
     <div style={{ marginTop: 50, padding: 30 }}>
       <h1 style={{ margin: '50px 0',textAlign: 'center' }}>My Portfolio</h1>
+       {/* <button onClick={this.openModal}>Open Modal</button> 
+       <Modal
+          isOpen={this.state.modalIsOpen}
+          contentLabel="Example Modal"
+        >
+        </Modal>  */}
       <Grid container spacing={40} justify="center">
         {posts.map(post => (
-          <Grid item key={post.title}>
+          <div>
+          <Grid item key={post.id}>
             <Card>
               <CardActionArea>
                 <CardMedia
@@ -69,18 +109,21 @@ function Posts(props) {
                     {post.title}
                   </Typography>
                   <Typography component="p">{post.excerpt}</Typography>
+                  <Fab color="primary" aria-label="add" className={classes.fab}>
+                    <AddIcon />
+                  </Fab>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
+              
+              {/* <CardActions> */}
+                {/* <Button size="small" color="primary">
                   Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
-                </Button>
-              </CardActions>
+                </Button> */}
+                
+              {/* </CardActions> */}
             </Card>
           </Grid>
+          </div>
         ))}
       </Grid>
     </div>
